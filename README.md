@@ -2,19 +2,19 @@
 
 ## Network Topology
 
-- **Gateway**
+- **Network Gateways**
   - `10.0.0.1`
   - `10.0.0.254`
-- **Switch**
+- **Network Switches**
   - `10.0.10.1`
   - `10.0.10.254`
-- **Servers**
+- **Physical Servers**
   - `10.0.20.1`
   - `10.0.20.254`
 - **Virtual Servers**
   - `10.0.30.1`
   - `10.0.30.254`
-- **AP**
+- **Access Points**
   - `10.0.40.1`
   - `10.0.40.254`
 - **Shared**
