@@ -1,4 +1,4 @@
-# Windows Server PS Scripts
+# Windows Server Installation Scripts
 
 1. **Gateway**  
   `10.0.0.1`   /   `10.0.0.254`
