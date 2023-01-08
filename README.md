@@ -1,5 +1,7 @@
 # Windows Server Installation Scripts
 
+## Network Topology
+
 1. **Gateway**  
   `10.0.0.1`   /   `10.0.0.254`
 2. **Switch**  
