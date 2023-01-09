@@ -3,21 +3,13 @@
 ## Install PowerShell
 
 ```powershell
-${V} = '7.3.1'; ${N} = "PowerShell-${V}-win-x64"; ${P} = "${env:SystemDrive}\Apps\PowerShell";
-Invoke-WebRequest "https://github.com/PowerShell/PowerShell/releases/download/v${V}/PowerShell-${V}-win-x64.zip" -OutFile "${P}\${N}.zip";
-Expand-Archive -Path "${P}\${N}.zip" -DestinationPath "${P}";
-if ( Test-Path -Path "${P}\${N}" ) { Remove-Item -Path "${P}\${N}" -Recurse -Force };
-Remove-Item -Path "${P}\${N}.zip";
+${V} = '7.3.1'; ${N} = "PowerShell-${V}-win-x64"; ${P} = "${env:SystemDrive}\Apps\PowerShell"; Invoke-WebRequest "https://github.com/PowerShell/PowerShell/releases/download/v${V}/PowerShell-${V}-win-x64.zip" -OutFile "${P}\${N}.zip"; Expand-Archive -Path "${P}\${N}.zip" -DestinationPath "${P}"; if ( Test-Path -Path "${P}\${N}" ) { Remove-Item -Path "${P}\${N}" -Recurse -Force }; Remove-Item -Path "${P}\${N}.zip";
 ```
 
 ## Install Scripts
 
 ```powershell
-${N} = "Server"; ${U} = "uaik/windows-server"; ${P} = "${env:SystemDrive}\Apps";
-Invoke-WebRequest "https://github.com/${U}/archive/refs/heads/main.zip" -OutFile "${P}\${N}.zip";
-Expand-Archive -Path "${P}\${N}.zip" -DestinationPath "${P}";
-if ( Test-Path -Path "${P}\${N}" ) { Remove-Item -Path "${P}\${N}" -Recurse -Force };
-Remove-Item -Path "${P}\${N}.zip";
+${N} = 'Server'; ${U} = 'uaik/windows-server'; ${P} = "${env:SystemDrive}\Apps"; Invoke-WebRequest "https://github.com/${U}/archive/refs/heads/main.zip" -OutFile "${P}\${N}.zip"; Expand-Archive -Path "${P}\${N}.zip" -DestinationPath "${P}"; if ( Test-Path -Path "${P}\${N}" ) { Remove-Item -Path "${P}\${N}" -Recurse -Force }; Rename-Item -Path "${P}\windows-server-main" -NewName "${P}\${N}"; Remove-Item -Path "${P}\${N}.zip";
 ```
 
 ## Network Topology
