@@ -147,3 +147,29 @@ function Add-SrvDHCPInDC() {
 function Add-SrvDHCPSecGp() {
   Add-DhcpServerSecurityGroup
 }
+
+# -------------------------------------------------------------------------------------------------------------------- #
+# Configure a Hot-Standby DHCP Failover.
+# -------------------------------------------------------------------------------------------------------------------- #
+
+function Add-SrvDHCPFailover() {
+  [String]${Name}                   = 'SFO-SIN-Failover'
+  [String]${PartnerServer}          = '10.0.20.4'
+  [String]${ServerRole}             = 'Active'
+  [IPAddress[]]${ScopeID}           = 10.0.0.0
+  [UInt32]${ReservePercent}         = 10
+  [TimeSpan]${MaxClientLeadTime}    = 00:10:00
+  [TimeSpan]${StateSwitchInterval}  = 00:10:00
+
+  $Params = @{
+    Name = "${Name}"
+    PartnerServer = "${Partner}"
+    ScopeId = ${ScopeID}
+    ReservePercent = ${ReservePercent}
+    MaxClientLeadTime = ${MaxClientLeadTime}
+    StateSwitchInterval = ${StateSwitchInterval}
+    ServerRole = "${ServerRole}"
+  }
+
+  Add-DhcpServerv4Failover @Params
+}
